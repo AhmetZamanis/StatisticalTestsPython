@@ -4,6 +4,7 @@ from math import ceil, sqrt
 def mean(sample):
     return sum(sample) / len(sample)
 
+
 def median(sample):
     
     sorted_sample = sorted(sample)
@@ -19,6 +20,7 @@ def median(sample):
     med = sorted_sample[mid - 1]
     return med
 
+
 def deviations_from_mean(sample, mu = None):
 
     if mu == None:
@@ -27,16 +29,19 @@ def deviations_from_mean(sample, mu = None):
     deviations = sample - mu
     return deviations
 
+
 def variance(sample):
     
     deviations_squared = deviations_from_mean(sample) ** 2
     return mean(deviations_squared)
+
 
 def standard_error_of_mean(sample):
     
     sigma_squared = variance(sample)
     sigma = sqrt(sigma_squared)
     return sigma / sqrt(len(sample))
+
 
 def mean_absolute_deviation(sample, mu = None):
 
